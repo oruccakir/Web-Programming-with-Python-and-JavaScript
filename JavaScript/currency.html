@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Currency Exchange</title>
+        <script>
+            document.addEventListener('DOMContentLoaded',function(){
+
+                const apiUrl = 'https://api.exchangeratesapi.io/v1/latest';
+                const accessToken = '8c5b3df78776a48ec78aa89312e07fee';
+
+                const headers = new Headers({
+                    'Authorization': `${accessToken}`
+                });
+
+                fetch(apiUrl,{
+                    method:'GET',
+                    headers : headers,
+                })
+                .then(response => {return response.json();
+                }).then(data => {
+                    console.log(data);
+                });
+            });
+        </script>
+    </head>
+    <body>
+       
+    </body>
+</html>
